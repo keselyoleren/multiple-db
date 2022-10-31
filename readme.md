@@ -1,6 +1,6 @@
-** concept penggunaan multiple database **
+# concept penggunaan multiple database #
 
-*** Config Multiple database ***
+## Config Multiple database ##
 
 ```
 DATABASES = {
@@ -25,7 +25,7 @@ DATABASES = {
 
 ```
 
-***  create data ke databa sesuai lokasi untuk menentukan database yang digunakan  ***
+##  create data ke databa sesuai lokasi untuk menentukan database yang digunakan  ##
 
 ```
  def create(self, request, *args, **kwargs):
@@ -39,7 +39,7 @@ DATABASES = {
 
 ```
 
-*** get all semua data dari 2 databae ***
+## get all semua data dari 2 databae ##
 ```
 # code
 
@@ -48,6 +48,8 @@ def list(self, request, *args, **kwargs):
     data = list(chain(Warga.objects.using('db_us'), self.queryset))
     serialize = self.serializer_class(data, many=True)
     return response.Response(serialize.data)
+```
+```
 
 [
 	{
@@ -125,7 +127,7 @@ def list(self, request, *args, **kwargs):
 ]
 ```
 
-*** Data untuk db_us ***
+## Data untuk db_us ##
 
 ``` 
 +----+---------+---------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
@@ -138,7 +140,7 @@ def list(self, request, *args, **kwargs):
 +----+---------+---------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
 ```
 
-*** Data untuk db_id ***
+## Data untuk db_id ##
 
 ``` 
 +----+---------+----------------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
