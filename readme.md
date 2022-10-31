@@ -36,7 +36,7 @@ DATABASES = {
         serializer.save(using='db_us')
         return response.Response(serializer.data)
     return super().create(request, *args, **kwargs)
-    
+
 ```
 
 *** get all semua data dari 2 databae ***
@@ -123,4 +123,32 @@ def list(self, request, *args, **kwargs):
 		"address": "LA city"
 	}
 ]
+```
+
+*** Data untuk db_us ***
+
+``` 
++----+---------+---------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
+| id | country | name    | gender | age | address                                                                                                               |
++----+---------+---------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
+|  1 | US      | RObin   | Fimale |   2 | Jl. Bantul km. 9, Juron, Rt/Rw : 19/00, Krandohan, Pendowoharjo, Kec. Sewon, Bantul, Daerah Istimewa Yogyakarta 55186 |
+|  2 | US      | Vincent | Male   |  12 | LA                                                                                                                    |
+| 21 | US      | MARSELO | Male   |  23 | LA city                                                                                                               |
+| 23 | US      | ANTONIA | Fimale |  23 | LA city                                                                                                               |
++----+---------+---------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
+```
+
+*** Data untuk db_id ***
+
+``` 
++----+---------+----------------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
+| id | country | name           | gender | age | address                                                                                                               |
++----+---------+----------------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
+|  1 | IN      | M Hadi Sasmito | Fimale |  12 | Jl. Bantul km. 9, Juron, Rt/Rw : 19/00, Krandohan, Pendowoharjo, Kec. Sewon, Bantul, Daerah Istimewa Yogyakarta 55186 |
+|  2 | IN      | M Hadi Sasmito | Male   |  12 | Jl. Bantul km. 9, Juron, Rt/Rw : 19/00, Krandohan, Pendowoharjo, Kec. Sewon, Bantul, Daerah Istimewa Yogyakarta 55186 |
+| 17 | IN      | Tomy           | Male   |  23 | LA city                                                                                                               |
+| 22 | IN      | Anton          | Fimale |  23 | LA city                                                                                                               |
+| 25 | IN      | ANTONIA        | Fimale |  23 | LA city                                                                                                               |
++----+---------+----------------+--------+-----+-----------------------------------------------------------------------------------------------------------------------+
+5 rows in set (0.01 sec)
 ```
