@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for macos10.14 (x86_64)
 --
--- Host: localhost    Database: db_id
+-- Host: localhost    Database: db_us
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -116,7 +116,7 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +125,6 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$260000$TOADIs8Gp8LR6fUfSyQ3AU$vQT28IbDN5TiDO2EOneOlo9DZTbdMp57vizoVVHN9ZY=','2022-10-31 13:44:44.728807',1,'admin','','','admin@gmail.com',1,1,'2022-10-31 13:44:28.152475');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,7 +206,7 @@ CREATE TABLE `django_admin_log` (
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `django_admin_log_chk_1` CHECK ((`action_flag` >= 0))
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,7 +215,6 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2022-10-31 15:51:03.487932','4','Warga object (4)',3,'',7,1),(2,'2022-10-31 15:57:17.644835','1','Warga object (1)',1,'[{\"added\": {}}]',7,1),(3,'2022-10-31 15:57:32.328759','1','Warga object (1)',2,'[{\"changed\": {\"fields\": [\"Negara Asal\", \"Jenis Kelamin\", \"Usia\"]}}]',7,1),(4,'2022-10-31 15:58:14.963261','1','Warga object (1)',2,'[{\"changed\": {\"fields\": [\"Negara Asal\"]}}]',7,1),(5,'2022-10-31 15:58:24.744832','1','Warga object (1)',2,'[{\"changed\": {\"fields\": [\"Negara Asal\"]}}]',7,1),(6,'2022-10-31 15:58:53.547591','1','Warga object (1)',2,'[]',7,1),(7,'2022-10-31 15:59:07.406850','1','Warga object (1)',2,'[{\"changed\": {\"fields\": [\"Negara Asal\"]}}]',7,1),(8,'2022-10-31 15:59:13.592960','1','Warga object (1)',2,'[]',7,1),(9,'2022-10-31 16:24:53.958717','6','Warga object (6)',3,'',7,1),(10,'2022-10-31 16:24:53.961734','5','Warga object (5)',3,'',7,1),(11,'2022-10-31 16:31:42.188529','12','Warga object (12)',3,'',7,1),(12,'2022-10-31 16:31:42.191028','11','Warga object (11)',3,'',7,1),(13,'2022-10-31 16:31:42.197123','10','Warga object (10)',3,'',7,1),(14,'2022-10-31 16:31:42.199933','9','Warga object (9)',3,'',7,1),(15,'2022-10-31 16:31:42.202246','8','Warga object (8)',3,'',7,1),(16,'2022-10-31 16:31:42.204320','7','Warga object (7)',3,'',7,1),(17,'2022-10-31 16:31:42.206216','3','Warga object (3)',3,'',7,1),(18,'2022-10-31 16:53:01.064320','15','Warga object (15)',3,'',7,1),(19,'2022-10-31 16:53:01.068829','14','Warga object (14)',3,'',7,1),(20,'2022-10-31 16:53:01.076846','13','Warga object (13)',3,'',7,1),(21,'2022-10-31 16:53:20.081926','2','Warga object (2)',1,'[{\"added\": {}}]',7,1),(22,'2022-10-31 17:02:34.699688','19','Warga object (19)',3,'',7,1),(23,'2022-10-31 17:02:34.702912','18','Warga object (18)',3,'',7,1),(24,'2022-10-31 17:02:34.704893','16','Warga object (16)',3,'',7,1),(25,'2022-10-31 17:02:48.033187','20','Warga object (20)',3,'',7,1),(26,'2022-10-31 17:03:36.303964','20','Warga object (20)',3,'',7,1),(27,'2022-10-31 17:03:36.323707','19','Warga object (19)',3,'',7,1),(28,'2022-10-31 17:09:32.233866','24','Warga object (24)',3,'',7,1),(29,'2022-10-31 17:09:32.239579','23','Warga object (23)',3,'',7,1),(30,'2022-10-31 17:09:32.245115','21','Warga object (21)',3,'',7,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,7 +266,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2022-10-31 13:43:17.861860'),(2,'auth','0001_initial','2022-10-31 13:43:18.196821'),(3,'admin','0001_initial','2022-10-31 13:43:18.300930'),(4,'admin','0002_logentry_remove_auto_add','2022-10-31 13:43:18.325497'),(5,'admin','0003_logentry_add_action_flag_choices','2022-10-31 13:43:18.346808'),(6,'contenttypes','0002_remove_content_type_name','2022-10-31 13:43:18.440966'),(7,'auth','0002_alter_permission_name_max_length','2022-10-31 13:43:18.497373'),(8,'auth','0003_alter_user_email_max_length','2022-10-31 13:43:18.561369'),(9,'auth','0004_alter_user_username_opts','2022-10-31 13:43:18.573848'),(10,'auth','0005_alter_user_last_login_null','2022-10-31 13:43:18.625380'),(11,'auth','0006_require_contenttypes_0002','2022-10-31 13:43:18.628700'),(12,'auth','0007_alter_validators_add_error_messages','2022-10-31 13:43:18.644125'),(13,'auth','0008_alter_user_username_max_length','2022-10-31 13:43:18.713053'),(14,'auth','0009_alter_user_last_name_max_length','2022-10-31 13:43:18.763332'),(15,'auth','0010_alter_group_name_max_length','2022-10-31 13:43:18.803210'),(16,'auth','0011_update_proxy_permissions','2022-10-31 13:43:18.824401'),(17,'auth','0012_alter_user_first_name_max_length','2022-10-31 13:43:18.886363'),(18,'penduduk','0001_initial','2022-10-31 13:43:18.911184'),(19,'penduduk','0002_alter_warga_options','2022-10-31 13:43:18.917329'),(20,'penduduk','0003_alter_warga_age','2022-10-31 13:43:18.962217'),(21,'sessions','0001_initial','2022-10-31 13:43:19.021729');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2022-10-31 13:42:55.051157'),(2,'auth','0001_initial','2022-10-31 13:42:55.430342'),(3,'admin','0001_initial','2022-10-31 13:42:55.533976'),(4,'admin','0002_logentry_remove_auto_add','2022-10-31 13:42:55.548321'),(5,'admin','0003_logentry_add_action_flag_choices','2022-10-31 13:42:55.561181'),(6,'contenttypes','0002_remove_content_type_name','2022-10-31 13:42:55.645359'),(7,'auth','0002_alter_permission_name_max_length','2022-10-31 13:42:55.698731'),(8,'auth','0003_alter_user_email_max_length','2022-10-31 13:42:55.765880'),(9,'auth','0004_alter_user_username_opts','2022-10-31 13:42:55.777594'),(10,'auth','0005_alter_user_last_login_null','2022-10-31 13:42:55.827151'),(11,'auth','0006_require_contenttypes_0002','2022-10-31 13:42:55.853458'),(12,'auth','0007_alter_validators_add_error_messages','2022-10-31 13:42:55.870292'),(13,'auth','0008_alter_user_username_max_length','2022-10-31 13:42:55.944607'),(14,'auth','0009_alter_user_last_name_max_length','2022-10-31 13:42:56.004682'),(15,'auth','0010_alter_group_name_max_length','2022-10-31 13:42:56.033803'),(16,'auth','0011_update_proxy_permissions','2022-10-31 13:42:56.059648'),(17,'auth','0012_alter_user_first_name_max_length','2022-10-31 13:42:56.118398'),(18,'penduduk','0001_initial','2022-10-31 13:42:56.145493'),(19,'penduduk','0002_alter_warga_options','2022-10-31 13:42:56.151398'),(20,'penduduk','0003_alter_warga_age','2022-10-31 13:42:56.198550'),(21,'sessions','0001_initial','2022-10-31 13:42:56.240034');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,7 +292,6 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('4oqz35vitjyyrtztt2eqxcl7enndehcc','.eJxVjMsOwiAQRf-FtSFAeY1L934DGWCQqoGktCvjv2uTLnR7zzn3xQJuaw3boCXMmZ2ZZKffLWJ6UNtBvmO7dZ56W5c58l3hBx382jM9L4f7d1Bx1G9tyuSL1CZZk4uKCUT00RUwbiKM4LJUqHUCa8lKr0jIyWoBwlkwyinB3h_cvzbE:1opV5o:_dS0uO6kAw4YzUH9fy2HEeyJpCtSkQc4kLW1zxYP_pY','2022-11-14 13:44:44.731885');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,7 +310,7 @@ CREATE TABLE `penduduk_warga` (
   `age` int(11) NOT NULL,
   `address` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -322,7 +319,7 @@ CREATE TABLE `penduduk_warga` (
 
 LOCK TABLES `penduduk_warga` WRITE;
 /*!40000 ALTER TABLE `penduduk_warga` DISABLE KEYS */;
-INSERT INTO `penduduk_warga` VALUES (1,'IN','M Hadi Sasmito','Fimale',12,'Jl. Bantul km. 9, Juron, Rt/Rw : 19/00, Krandohan, Pendowoharjo, Kec. Sewon, Bantul, Daerah Istimewa Yogyakarta 55186'),(2,'IN','M Hadi Sasmito','Male',12,'Jl. Bantul km. 9, Juron, Rt/Rw : 19/00, Krandohan, Pendowoharjo, Kec. Sewon, Bantul, Daerah Istimewa Yogyakarta 55186'),(17,'IN','Tomy','Male',23,'LA city'),(22,'IN','Anton','Fimale',23,'LA city'),(25,'IN','ANTONIA','Fimale',23,'LA city');
+INSERT INTO `penduduk_warga` VALUES (1,'US','RObin','Fimale',2,'Jl. Bantul km. 9, Juron, Rt/Rw : 19/00, Krandohan, Pendowoharjo, Kec. Sewon, Bantul, Daerah Istimewa Yogyakarta 55186'),(2,'US','Vincent','Male',12,'LA'),(21,'US','MARSELO','Male',23,'LA city'),(23,'US','ANTONIA','Fimale',23,'LA city');
 /*!40000 ALTER TABLE `penduduk_warga` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -335,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-01  0:26:42
+-- Dump completed on 2022-11-01  0:26:33
